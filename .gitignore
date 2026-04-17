@@ -1,0 +1,38 @@
+# ---- OS / Editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Environment files ----
+.env
+.env.*
+!.env.example
+
+# ---- Frontend (Node/Vite) ----
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.vite/
+
+# ---- Backend (C++ build artifacts) ----
+Backend/src/engine
+Backend/src/*.o
+Backend/src/*.obj
+*.out
+*.exe
+
+# ---- Generated simulation outputs ----
+Backend/suggestions/*.json
+Backend/testdata/output.json
+
+# ---- Coverage / cache ----
+coverage/
+.cache/
