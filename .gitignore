@@ -21,6 +21,7 @@ yarn-error.log*
 Frontend/node_modules/
 Frontend/dist/
 Frontend/.vite/
+Frontend/.git/
 
 # ---- Backend (C++ build artifacts) ----
 Backend/src/engine

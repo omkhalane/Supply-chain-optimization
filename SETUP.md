@@ -62,7 +62,7 @@ npm run dev
 
 Frontend defaults to:
 
-- `http://localhost:3000`
+- a dynamic available Vite port (commonly `http://localhost:5173`)
 
 ---
 
@@ -78,8 +78,8 @@ What this does:
 
 1. Cleans old generated files
 2. Compiles backend and runs optimization flow
-3. Starts frontend server
-4. Opens browser (when desktop opener is available)
+3. Starts frontend server only if suggestions/routes are generated
+4. Detects and opens whichever frontend URL/port Vite assigns
 
 ---
 
@@ -122,6 +122,16 @@ npm install
 ### C++ compile fails
 
 - Ensure `g++` is installed and supports C++11.
+
+### Frontend files not pushed to GitHub
+
+If `Frontend` was an embedded repository, convert it to regular tracked files:
+
+```bash
+git rm --cached Frontend
+rm -rf Frontend/.git
+git add Frontend
+```
 
 ---
 

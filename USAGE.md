@@ -53,9 +53,19 @@ The backend then computes recovery routes from healthy sources to impacted nodes
 
 ## 4) Review frontend
 
-Open:
+When suggestions are available, [run.sh](run.sh) starts frontend automatically and prints the detected URL/port.
 
-- `http://localhost:3000`
+Common local URL example:
+
+- `http://localhost:5173`
+
+If no suggestions are generated, frontend is skipped by design.
+You can still run frontend manually:
+
+```bash
+cd Frontend
+npm run dev
+```
 
 Key frontend behaviors:
 
