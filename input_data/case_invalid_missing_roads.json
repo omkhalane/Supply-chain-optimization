@@ -1,0 +1,16 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SUP_INV2",
+      "type": "supplier",
+      "inventory": [{ "item": "BadCase2", "quantity": 20, "unit": "units" }]
+    }
+  ],
+  "simulation": {
+    "failureNode": "SUP_INV2"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "config": {
+    "petrolRate_INR": 0,
+    "truckMileage_kmpl": 1
+  },
+  "nodes": [
+    {
+      "id": "S_ZERO",
+      "type": "supplier",
+      "inventory": [{ "item": "ZeroBatch", "quantity": 0, "unit": "units" }]
+    },
+    {
+      "id": "F_ZERO",
+      "type": "factory",
+      "inventory": [{ "item": "ZeroWIP", "quantity": 0, "unit": "units" }]
+    },
+    {
+      "id": "M_ZERO",
+      "type": "market",
+      "inventory": [{ "item": "ZeroStock", "quantity": 0, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "S_ZERO",
+      "to": "F_ZERO",
+      "distance": 0,
+      "capacity": 0,
+      "tollTax": 0,
+      "trafficDelay": 0
+    },
+    {
+      "from": "F_ZERO",
+      "to": "M_ZERO",
+      "distance": 0,
+      "capacity": 0,
+      "tollTax": 0,
+      "trafficDelay": 0
+    }
+  ],
+  "simulation": {
+    "failureNode": "F_ZERO"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "config": {
+    "petrolRate_INR": 98,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SUP_C1",
+      "type": "supplier",
+      "inventory": [{ "item": "Material_A", "quantity": 1300, "unit": "units" }]
+    },
+    {
+      "id": "FAC_C1",
+      "type": "factory",
+      "inventory": [{ "item": "WIP_A", "quantity": 700, "unit": "units" }]
+    },
+    {
+      "id": "WH_C1",
+      "type": "warehouse",
+      "inventory": [{ "item": "Buffer_A", "quantity": 650, "unit": "units" }]
+    },
+    {
+      "id": "HUB_C1",
+      "type": "warehouse",
+      "inventory": [{ "item": "Transit_A", "quantity": 450, "unit": "units" }]
+    },
+    {
+      "id": "MKT_C1",
+      "type": "market",
+      "inventory": [{ "item": "Retail_A", "quantity": 300, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_C1",
+      "to": "FAC_C1",
+      "distance": 40,
+      "capacity": 900,
+      "tollTax": 20,
+      "trafficDelay": 10
+    },
+    {
+      "from": "FAC_C1",
+      "to": "WH_C1",
+      "distance": 35,
+      "capacity": 850,
+      "tollTax": 15,
+      "trafficDelay": 8
+    },
+    {
+      "from": "WH_C1",
+      "to": "HUB_C1",
+      "distance": 30,
+      "capacity": 800,
+      "tollTax": 12,
+      "trafficDelay": 6
+    },
+    {
+      "from": "HUB_C1",
+      "to": "FAC_C1",
+      "distance": 25,
+      "capacity": 700,
+      "tollTax": 10,
+      "trafficDelay": 4
+    },
+    {
+      "from": "HUB_C1",
+      "to": "MKT_C1",
+      "distance": 20,
+      "capacity": 650,
+      "tollTax": 8,
+      "trafficDelay": 5
+    }
+  ],
+  "simulation": {
+    "failureNode": "FAC_C1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "config": {
+    "petrolRate_INR": 0,
+    "truckMileage_kmpl": 0
+  },
+  "nodes": [
+    {
+      "id": "Node_Name_Here",
+      "type": "supplier",
+      "inventory": [{ "item": "Item_Name", "quantity": 0, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "Node_A",
+      "to": "Node_B",
+      "distance": 0,
+      "capacity": 0,
+      "tollTax": 0,
+      "trafficDelay": 0
+    }
+  ],
+  "simulation": {
+    "failureNode": "Node_To_Simulate_Failure"
+  }
+}

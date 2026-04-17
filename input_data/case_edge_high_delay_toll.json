@@ -1,0 +1,50 @@
+{
+  "config": {
+    "petrolRate_INR": 120,
+    "truckMileage_kmpl": 3
+  },
+  "nodes": [
+    {
+      "id": "SUP_EXP",
+      "type": "supplier",
+      "inventory": [
+        { "item": "Premium_Components", "quantity": 5000, "unit": "units" }
+      ]
+    },
+    {
+      "id": "WH_EXP",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "HighValue_Stock", "quantity": 2200, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_EXP",
+      "type": "market",
+      "inventory": [
+        { "item": "Luxury_Stock", "quantity": 900, "unit": "units" }
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_EXP",
+      "to": "WH_EXP",
+      "distance": 220,
+      "capacity": 600,
+      "tollTax": 4500,
+      "trafficDelay": 600
+    },
+    {
+      "from": "WH_EXP",
+      "to": "MKT_EXP",
+      "distance": 140,
+      "capacity": 500,
+      "tollTax": 3000,
+      "trafficDelay": 480
+    }
+  ],
+  "simulation": {
+    "failureNode": "WH_EXP"
+  }
+}

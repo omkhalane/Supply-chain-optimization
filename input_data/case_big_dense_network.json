@@ -1,0 +1,242 @@
+{
+  "config": {
+    "petrolRate_INR": 105,
+    "truckMileage_kmpl": 4
+  },
+  "nodes": [
+    {
+      "id": "DS1",
+      "type": "supplier",
+      "inventory": [{ "item": "A", "quantity": 2000, "unit": "units" }]
+    },
+    {
+      "id": "DS2",
+      "type": "supplier",
+      "inventory": [{ "item": "B", "quantity": 2100, "unit": "units" }]
+    },
+    {
+      "id": "DF1",
+      "type": "factory",
+      "inventory": [{ "item": "C", "quantity": 1200, "unit": "units" }]
+    },
+    {
+      "id": "DF2",
+      "type": "factory",
+      "inventory": [{ "item": "D", "quantity": 1250, "unit": "units" }]
+    },
+    {
+      "id": "DW1",
+      "type": "warehouse",
+      "inventory": [{ "item": "E", "quantity": 900, "unit": "units" }]
+    },
+    {
+      "id": "DW2",
+      "type": "warehouse",
+      "inventory": [{ "item": "F", "quantity": 920, "unit": "units" }]
+    },
+    {
+      "id": "DW3",
+      "type": "warehouse",
+      "inventory": [{ "item": "G", "quantity": 940, "unit": "units" }]
+    },
+    {
+      "id": "DM1",
+      "type": "market",
+      "inventory": [{ "item": "H", "quantity": 500, "unit": "units" }]
+    },
+    {
+      "id": "DM2",
+      "type": "market",
+      "inventory": [{ "item": "I", "quantity": 520, "unit": "units" }]
+    },
+    {
+      "id": "DM3",
+      "type": "market",
+      "inventory": [{ "item": "J", "quantity": 540, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "DS1",
+      "to": "DF1",
+      "distance": 40,
+      "capacity": 1000,
+      "tollTax": 20,
+      "trafficDelay": 8
+    },
+    {
+      "from": "DS1",
+      "to": "DF2",
+      "distance": 45,
+      "capacity": 980,
+      "tollTax": 22,
+      "trafficDelay": 9
+    },
+    {
+      "from": "DS2",
+      "to": "DF1",
+      "distance": 42,
+      "capacity": 990,
+      "tollTax": 21,
+      "trafficDelay": 8
+    },
+    {
+      "from": "DS2",
+      "to": "DF2",
+      "distance": 47,
+      "capacity": 970,
+      "tollTax": 23,
+      "trafficDelay": 10
+    },
+
+    {
+      "from": "DF1",
+      "to": "DW1",
+      "distance": 28,
+      "capacity": 900,
+      "tollTax": 12,
+      "trafficDelay": 5
+    },
+    {
+      "from": "DF1",
+      "to": "DW2",
+      "distance": 30,
+      "capacity": 880,
+      "tollTax": 13,
+      "trafficDelay": 6
+    },
+    {
+      "from": "DF1",
+      "to": "DW3",
+      "distance": 32,
+      "capacity": 860,
+      "tollTax": 14,
+      "trafficDelay": 6
+    },
+    {
+      "from": "DF2",
+      "to": "DW1",
+      "distance": 29,
+      "capacity": 890,
+      "tollTax": 12,
+      "trafficDelay": 5
+    },
+    {
+      "from": "DF2",
+      "to": "DW2",
+      "distance": 31,
+      "capacity": 870,
+      "tollTax": 13,
+      "trafficDelay": 6
+    },
+    {
+      "from": "DF2",
+      "to": "DW3",
+      "distance": 33,
+      "capacity": 850,
+      "tollTax": 14,
+      "trafficDelay": 7
+    },
+
+    {
+      "from": "DW1",
+      "to": "DM1",
+      "distance": 18,
+      "capacity": 700,
+      "tollTax": 7,
+      "trafficDelay": 3
+    },
+    {
+      "from": "DW1",
+      "to": "DM2",
+      "distance": 20,
+      "capacity": 680,
+      "tollTax": 8,
+      "trafficDelay": 4
+    },
+    {
+      "from": "DW1",
+      "to": "DM3",
+      "distance": 22,
+      "capacity": 660,
+      "tollTax": 9,
+      "trafficDelay": 4
+    },
+    {
+      "from": "DW2",
+      "to": "DM1",
+      "distance": 19,
+      "capacity": 690,
+      "tollTax": 7,
+      "trafficDelay": 3
+    },
+    {
+      "from": "DW2",
+      "to": "DM2",
+      "distance": 21,
+      "capacity": 670,
+      "tollTax": 8,
+      "trafficDelay": 4
+    },
+    {
+      "from": "DW2",
+      "to": "DM3",
+      "distance": 23,
+      "capacity": 650,
+      "tollTax": 9,
+      "trafficDelay": 5
+    },
+    {
+      "from": "DW3",
+      "to": "DM1",
+      "distance": 20,
+      "capacity": 680,
+      "tollTax": 8,
+      "trafficDelay": 4
+    },
+    {
+      "from": "DW3",
+      "to": "DM2",
+      "distance": 22,
+      "capacity": 660,
+      "tollTax": 9,
+      "trafficDelay": 5
+    },
+    {
+      "from": "DW3",
+      "to": "DM3",
+      "distance": 24,
+      "capacity": 640,
+      "tollTax": 10,
+      "trafficDelay": 5
+    },
+
+    {
+      "from": "DW1",
+      "to": "DW2",
+      "distance": 14,
+      "capacity": 500,
+      "tollTax": 4,
+      "trafficDelay": 2
+    },
+    {
+      "from": "DW2",
+      "to": "DW3",
+      "distance": 14,
+      "capacity": 500,
+      "tollTax": 4,
+      "trafficDelay": 2
+    },
+    {
+      "from": "DW3",
+      "to": "DW1",
+      "distance": 14,
+      "capacity": 500,
+      "tollTax": 4,
+      "trafficDelay": 2
+    }
+  ],
+  "simulation": {
+    "failureNode": "DF1"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SUP_NEG",
+      "type": "supplier",
+      "inventory": [{ "item": "Test_Neg", "quantity": 100, "unit": "units" }]
+    },
+    {
+      "id": "WH_NEG",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Test_Neg_Buffer", "quantity": 50, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_NEG",
+      "type": "market",
+      "inventory": [
+        { "item": "Test_Neg_Retail", "quantity": 20, "unit": "units" }
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_NEG",
+      "to": "WH_NEG",
+      "distance": -20,
+      "capacity": -100,
+      "tollTax": -10,
+      "trafficDelay": -5
+    },
+    {
+      "from": "WH_NEG",
+      "to": "MKT_NEG",
+      "distance": 30,
+      "capacity": 200,
+      "tollTax": 5,
+      "trafficDelay": 2
+    }
+  ],
+  "simulation": {
+    "failureNode": "WH_NEG"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 4
+  },
+  "nodes": [
+    {
+      "id": "SUP_A",
+      "type": "supplier",
+      "inventory": [{ "item": "Chips", "quantity": 2000, "unit": "units" }]
+    },
+    {
+      "id": "SUP_B",
+      "type": "supplier",
+      "inventory": [{ "item": "Batteries", "quantity": 1800, "unit": "units" }]
+    },
+    {
+      "id": "FAC_MAIN",
+      "type": "factory",
+      "inventory": [{ "item": "Phones_WIP", "quantity": 1000, "unit": "units" }]
+    },
+    {
+      "id": "WH_NORTH",
+      "type": "warehouse",
+      "inventory": [{ "item": "Ready_Units", "quantity": 700, "unit": "units" }]
+    },
+    {
+      "id": "MKT_DELHI",
+      "type": "market",
+      "inventory": [
+        { "item": "Retail_Stock", "quantity": 250, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_MUMBAI",
+      "type": "market",
+      "inventory": [
+        { "item": "Retail_Stock", "quantity": 280, "unit": "units" }
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_A",
+      "to": "FAC_MAIN",
+      "distance": 60,
+      "capacity": 1200,
+      "tollTax": 30,
+      "trafficDelay": 15
+    },
+    {
+      "from": "SUP_B",
+      "to": "FAC_MAIN",
+      "distance": 55,
+      "capacity": 1100,
+      "tollTax": 25,
+      "trafficDelay": 20
+    },
+    {
+      "from": "FAC_MAIN",
+      "to": "WH_NORTH",
+      "distance": 45,
+      "capacity": 1000,
+      "tollTax": 20,
+      "trafficDelay": 10
+    },
+    {
+      "from": "WH_NORTH",
+      "to": "MKT_DELHI",
+      "distance": 30,
+      "capacity": 700,
+      "tollTax": 10,
+      "trafficDelay": 5
+    },
+    {
+      "from": "WH_NORTH",
+      "to": "MKT_MUMBAI",
+      "distance": 38,
+      "capacity": 650,
+      "tollTax": 12,
+      "trafficDelay": 8
+    }
+  ],
+  "simulation": {
+    "failureNode": "WH_NORTH"
+  }
+}

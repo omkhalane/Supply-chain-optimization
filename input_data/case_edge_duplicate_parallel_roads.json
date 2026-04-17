@@ -1,0 +1,60 @@
+{
+  "config": {
+    "petrolRate_INR": 103,
+    "truckMileage_kmpl": 4
+  },
+  "nodes": [
+    {
+      "id": "SUP_DUP",
+      "type": "supplier",
+      "inventory": [{ "item": "Metal", "quantity": 2500, "unit": "kg" }]
+    },
+    {
+      "id": "WH_DUP",
+      "type": "warehouse",
+      "inventory": [{ "item": "Metal_Buffer", "quantity": 1200, "unit": "kg" }]
+    },
+    {
+      "id": "MKT_DUP",
+      "type": "market",
+      "inventory": [{ "item": "Metal_Retail", "quantity": 600, "unit": "kg" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_DUP",
+      "to": "WH_DUP",
+      "distance": 70,
+      "capacity": 900,
+      "tollTax": 60,
+      "trafficDelay": 15
+    },
+    {
+      "from": "SUP_DUP",
+      "to": "WH_DUP",
+      "distance": 55,
+      "capacity": 600,
+      "tollTax": 120,
+      "trafficDelay": 5
+    },
+    {
+      "from": "SUP_DUP",
+      "to": "WH_DUP",
+      "distance": 90,
+      "capacity": 1500,
+      "tollTax": 10,
+      "trafficDelay": 40
+    },
+    {
+      "from": "WH_DUP",
+      "to": "MKT_DUP",
+      "distance": 25,
+      "capacity": 800,
+      "tollTax": 12,
+      "trafficDelay": 5
+    }
+  ],
+  "simulation": {
+    "failureNode": "WH_DUP"
+  }
+}

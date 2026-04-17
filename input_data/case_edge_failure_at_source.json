@@ -1,0 +1,57 @@
+{
+  "config": {
+    "petrolRate_INR": 99,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SRC_FAIL",
+      "type": "supplier",
+      "inventory": [{ "item": "Raw_X", "quantity": 2000, "unit": "units" }]
+    },
+    {
+      "id": "SRC_BACKUP",
+      "type": "supplier",
+      "inventory": [{ "item": "Raw_X", "quantity": 900, "unit": "units" }]
+    },
+    {
+      "id": "FAC_FS",
+      "type": "factory",
+      "inventory": [{ "item": "WIP_X", "quantity": 1200, "unit": "units" }]
+    },
+    {
+      "id": "MKT_FS",
+      "type": "market",
+      "inventory": [{ "item": "Final_X", "quantity": 700, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SRC_FAIL",
+      "to": "FAC_FS",
+      "distance": 45,
+      "capacity": 1000,
+      "tollTax": 20,
+      "trafficDelay": 10
+    },
+    {
+      "from": "SRC_BACKUP",
+      "to": "FAC_FS",
+      "distance": 60,
+      "capacity": 800,
+      "tollTax": 25,
+      "trafficDelay": 15
+    },
+    {
+      "from": "FAC_FS",
+      "to": "MKT_FS",
+      "distance": 35,
+      "capacity": 900,
+      "tollTax": 12,
+      "trafficDelay": 8
+    }
+  ],
+  "simulation": {
+    "failureNode": "SRC_FAIL"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "config": {
+    "petrolRate_INR": "one_hundred",
+    "truckMileage_kmpl": "five"
+  },
+  "nodes": [
+    {
+      "id": 1001,
+      "type": "supplier",
+      "inventory": [{ "item": "BadType", "quantity": "many", "unit": 10 }]
+    }
+  ],
+  "roads": [
+    {
+      "from": 1001,
+      "to": "MKT_INV3",
+      "distance": "far",
+      "capacity": "high",
+      "tollTax": "none",
+      "trafficDelay": "low"
+    }
+  ],
+  "simulation": {
+    "failureNode": 1001
+  }
+}

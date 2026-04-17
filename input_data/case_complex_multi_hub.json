@@ -1,0 +1,203 @@
+{
+  "config": {
+    "petrolRate_INR": 104,
+    "truckMileage_kmpl": 4
+  },
+  "nodes": [
+    {
+      "id": "SUP_A1",
+      "type": "supplier",
+      "inventory": [{ "item": "Chipsets", "quantity": 3000, "unit": "units" }]
+    },
+    {
+      "id": "SUP_A2",
+      "type": "supplier",
+      "inventory": [{ "item": "Batteries", "quantity": 4200, "unit": "units" }]
+    },
+    {
+      "id": "SUP_A3",
+      "type": "supplier",
+      "inventory": [{ "item": "Displays", "quantity": 3500, "unit": "units" }]
+    },
+    {
+      "id": "FAC_B1",
+      "type": "factory",
+      "inventory": [{ "item": "Phones_WIP", "quantity": 1600, "unit": "units" }]
+    },
+    {
+      "id": "FAC_B2",
+      "type": "factory",
+      "inventory": [
+        { "item": "Tablets_WIP", "quantity": 1300, "unit": "units" }
+      ]
+    },
+    {
+      "id": "WH_C1",
+      "type": "warehouse",
+      "inventory": [{ "item": "Mixed_Stock", "quantity": 900, "unit": "units" }]
+    },
+    {
+      "id": "WH_C2",
+      "type": "warehouse",
+      "inventory": [{ "item": "Mixed_Stock", "quantity": 850, "unit": "units" }]
+    },
+    {
+      "id": "WH_C3",
+      "type": "warehouse",
+      "inventory": [{ "item": "Mixed_Stock", "quantity": 780, "unit": "units" }]
+    },
+    {
+      "id": "HUB_D1",
+      "type": "warehouse",
+      "inventory": [{ "item": "Transit", "quantity": 600, "unit": "units" }]
+    },
+    {
+      "id": "MKT_E1",
+      "type": "market",
+      "inventory": [{ "item": "Retail", "quantity": 400, "unit": "units" }]
+    },
+    {
+      "id": "MKT_E2",
+      "type": "market",
+      "inventory": [{ "item": "Retail", "quantity": 420, "unit": "units" }]
+    },
+    {
+      "id": "MKT_E3",
+      "type": "market",
+      "inventory": [{ "item": "Retail", "quantity": 390, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_A1",
+      "to": "FAC_B1",
+      "distance": 70,
+      "capacity": 1800,
+      "tollTax": 40,
+      "trafficDelay": 20
+    },
+    {
+      "from": "SUP_A2",
+      "to": "FAC_B1",
+      "distance": 90,
+      "capacity": 2200,
+      "tollTax": 50,
+      "trafficDelay": 15
+    },
+    {
+      "from": "SUP_A3",
+      "to": "FAC_B2",
+      "distance": 85,
+      "capacity": 2000,
+      "tollTax": 45,
+      "trafficDelay": 18
+    },
+    {
+      "from": "SUP_A2",
+      "to": "FAC_B2",
+      "distance": 95,
+      "capacity": 1700,
+      "tollTax": 55,
+      "trafficDelay": 22
+    },
+    {
+      "from": "FAC_B1",
+      "to": "WH_C1",
+      "distance": 45,
+      "capacity": 1500,
+      "tollTax": 20,
+      "trafficDelay": 8
+    },
+    {
+      "from": "FAC_B1",
+      "to": "WH_C2",
+      "distance": 52,
+      "capacity": 1400,
+      "tollTax": 24,
+      "trafficDelay": 12
+    },
+    {
+      "from": "FAC_B2",
+      "to": "WH_C2",
+      "distance": 48,
+      "capacity": 1300,
+      "tollTax": 19,
+      "trafficDelay": 9
+    },
+    {
+      "from": "FAC_B2",
+      "to": "WH_C3",
+      "distance": 60,
+      "capacity": 1450,
+      "tollTax": 26,
+      "trafficDelay": 11
+    },
+    {
+      "from": "WH_C1",
+      "to": "HUB_D1",
+      "distance": 35,
+      "capacity": 1200,
+      "tollTax": 12,
+      "trafficDelay": 7
+    },
+    {
+      "from": "WH_C2",
+      "to": "HUB_D1",
+      "distance": 30,
+      "capacity": 1250,
+      "tollTax": 10,
+      "trafficDelay": 6
+    },
+    {
+      "from": "WH_C3",
+      "to": "HUB_D1",
+      "distance": 40,
+      "capacity": 1100,
+      "tollTax": 14,
+      "trafficDelay": 8
+    },
+    {
+      "from": "HUB_D1",
+      "to": "MKT_E1",
+      "distance": 28,
+      "capacity": 900,
+      "tollTax": 8,
+      "trafficDelay": 5
+    },
+    {
+      "from": "HUB_D1",
+      "to": "MKT_E2",
+      "distance": 24,
+      "capacity": 850,
+      "tollTax": 7,
+      "trafficDelay": 4
+    },
+    {
+      "from": "HUB_D1",
+      "to": "MKT_E3",
+      "distance": 31,
+      "capacity": 880,
+      "tollTax": 9,
+      "trafficDelay": 6
+    },
+    {
+      "from": "WH_C1",
+      "to": "MKT_E2",
+      "distance": 50,
+      "capacity": 650,
+      "tollTax": 13,
+      "trafficDelay": 10
+    },
+    {
+      "from": "WH_C3",
+      "to": "MKT_E1",
+      "distance": 54,
+      "capacity": 620,
+      "tollTax": 15,
+      "trafficDelay": 12
+    }
+  ],
+  "simulation": {
+    "failureNode": "WH_C2"
+  }
+}

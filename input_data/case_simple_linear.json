@@ -1,0 +1,61 @@
+{
+  "config": {
+    "petrolRate_INR": 95,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "S1_Supplier",
+      "type": "supplier",
+      "inventory": [
+        { "item": "Raw_Material", "quantity": 1200, "unit": "units" }
+      ]
+    },
+    {
+      "id": "F1_Factory",
+      "type": "factory",
+      "inventory": [{ "item": "WIP", "quantity": 800, "unit": "units" }]
+    },
+    {
+      "id": "W1_Warehouse",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Packed_Goods", "quantity": 600, "unit": "units" }
+      ]
+    },
+    {
+      "id": "M1_Market",
+      "type": "market",
+      "inventory": [{ "item": "Shelf_Stock", "quantity": 300, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "S1_Supplier",
+      "to": "F1_Factory",
+      "distance": 40,
+      "capacity": 1000,
+      "tollTax": 20,
+      "trafficDelay": 10
+    },
+    {
+      "from": "F1_Factory",
+      "to": "W1_Warehouse",
+      "distance": 35,
+      "capacity": 900,
+      "tollTax": 15,
+      "trafficDelay": 5
+    },
+    {
+      "from": "W1_Warehouse",
+      "to": "M1_Market",
+      "distance": 20,
+      "capacity": 700,
+      "tollTax": 10,
+      "trafficDelay": 5
+    }
+  ],
+  "simulation": {
+    "failureNode": "F1_Factory"
+  }
+}

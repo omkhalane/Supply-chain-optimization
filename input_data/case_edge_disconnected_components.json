@@ -1,0 +1,79 @@
+{
+  "config": {
+    "petrolRate_INR": 90,
+    "truckMileage_kmpl": 6
+  },
+  "nodes": [
+    {
+      "id": "SUP_D1",
+      "type": "supplier",
+      "inventory": [{ "item": "Comp_X", "quantity": 1000, "unit": "units" }]
+    },
+    {
+      "id": "WH_D1",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Comp_X_Buffer", "quantity": 500, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_D1",
+      "type": "market",
+      "inventory": [{ "item": "Retail_X", "quantity": 300, "unit": "units" }]
+    },
+    {
+      "id": "SUP_D2",
+      "type": "supplier",
+      "inventory": [{ "item": "Comp_Y", "quantity": 900, "unit": "units" }]
+    },
+    {
+      "id": "WH_D2",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Comp_Y_Buffer", "quantity": 450, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_D2",
+      "type": "market",
+      "inventory": [{ "item": "Retail_Y", "quantity": 250, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_D1",
+      "to": "WH_D1",
+      "distance": 30,
+      "capacity": 600,
+      "tollTax": 10,
+      "trafficDelay": 5
+    },
+    {
+      "from": "WH_D1",
+      "to": "MKT_D1",
+      "distance": 25,
+      "capacity": 550,
+      "tollTax": 8,
+      "trafficDelay": 4
+    },
+    {
+      "from": "SUP_D2",
+      "to": "WH_D2",
+      "distance": 35,
+      "capacity": 580,
+      "tollTax": 9,
+      "trafficDelay": 6
+    },
+    {
+      "from": "WH_D2",
+      "to": "MKT_D2",
+      "distance": 28,
+      "capacity": 520,
+      "tollTax": 7,
+      "trafficDelay": 3
+    }
+  ],
+  "simulation": {
+    "failureNode": "SUP_D1"
+  }
+}

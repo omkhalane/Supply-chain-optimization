@@ -1,0 +1,17 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "LONE_SUP",
+      "type": "supplier",
+      "inventory": [{ "item": "Single_Item", "quantity": 100, "unit": "units" }]
+    }
+  ],
+  "roads": [],
+  "simulation": {
+    "failureNode": "LONE_SUP"
+  }
+}

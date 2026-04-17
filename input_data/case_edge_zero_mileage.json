@@ -1,0 +1,31 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 0
+  },
+  "nodes": [
+    {
+      "id": "SUP_ZM",
+      "type": "supplier",
+      "inventory": [{ "item": "Test", "quantity": 100, "unit": "units" }]
+    },
+    {
+      "id": "MKT_ZM",
+      "type": "market",
+      "inventory": [{ "item": "Test", "quantity": 20, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_ZM",
+      "to": "MKT_ZM",
+      "distance": 20,
+      "capacity": 100,
+      "tollTax": 5,
+      "trafficDelay": 2
+    }
+  ],
+  "simulation": {
+    "failureNode": "SUP_ZM"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "SUP_INV1",
+      "type": "supplier",
+      "inventory": [{ "item": "BadCase", "quantity": 10, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_INV1",
+      "to": "MKT_INV1",
+      "distance": 20,
+      "capacity": 100,
+      "tollTax": 0,
+      "trafficDelay": 0
+    }
+  ],
+  "simulation": {
+    "failureNode": "SUP_INV1"
+  }
+}

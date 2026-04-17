@@ -1,0 +1,30 @@
+{
+  "config": {
+    "petrolRate_INR": 101,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SUP_MISS",
+      "type": "supplier",
+      "inventory": [{ "item": "Copper", "quantity": 2000, "unit": "kg" }]
+    },
+    {
+      "id": "FAC_MISS",
+      "type": "factory",
+      "inventory": [{ "item": "Wire", "quantity": 900, "unit": "kg" }]
+    },
+    {
+      "id": "MKT_MISS",
+      "type": "market",
+      "inventory": [{ "item": "Cable_Stock", "quantity": 400, "unit": "kg" }]
+    }
+  ],
+  "roads": [
+    { "from": "SUP_MISS", "to": "FAC_MISS", "distance": 44 },
+    { "from": "FAC_MISS", "to": "MKT_MISS", "distance": 33 }
+  ],
+  "simulation": {
+    "failureNode": "FAC_MISS"
+  }
+}

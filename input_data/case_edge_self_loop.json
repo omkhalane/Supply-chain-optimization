@@ -1,0 +1,56 @@
+{
+  "config": {
+    "petrolRate_INR": 88,
+    "truckMileage_kmpl": 6
+  },
+  "nodes": [
+    {
+      "id": "SUP_LOOP",
+      "type": "supplier",
+      "inventory": [{ "item": "Comp_L", "quantity": 900, "unit": "units" }]
+    },
+    {
+      "id": "HUB_LOOP",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Comp_L_Buffer", "quantity": 500, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_LOOP",
+      "type": "market",
+      "inventory": [
+        { "item": "Comp_L_Retail", "quantity": 250, "unit": "units" }
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_LOOP",
+      "to": "HUB_LOOP",
+      "distance": 40,
+      "capacity": 700,
+      "tollTax": 10,
+      "trafficDelay": 8
+    },
+    {
+      "from": "HUB_LOOP",
+      "to": "HUB_LOOP",
+      "distance": 5,
+      "capacity": 300,
+      "tollTax": 0,
+      "trafficDelay": 1
+    },
+    {
+      "from": "HUB_LOOP",
+      "to": "MKT_LOOP",
+      "distance": 22,
+      "capacity": 650,
+      "tollTax": 6,
+      "trafficDelay": 4
+    }
+  ],
+  "simulation": {
+    "failureNode": "HUB_LOOP"
+  }
+}

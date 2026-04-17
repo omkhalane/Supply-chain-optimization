@@ -1,0 +1,46 @@
+{
+  "config": {
+    "petrolRate_INR": 92,
+    "truckMileage_kmpl": 6
+  },
+  "nodes": [
+    {
+      "id": "S_ALPHA",
+      "type": "supplier",
+      "inventory": [{ "item": "Panels", "quantity": 1000, "unit": "units" }]
+    },
+    {
+      "id": "W_ALPHA",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Stored_Panels", "quantity": 500, "unit": "units" }
+      ]
+    },
+    {
+      "id": "M_ALPHA",
+      "type": "market",
+      "inventory": [{ "item": "Stock", "quantity": 200, "unit": "units" }]
+    }
+  ],
+  "roads": [
+    {
+      "from": "S_ALPHA",
+      "to": "W_ALPHA",
+      "distance": 70,
+      "capacity": 800,
+      "tollTax": 40,
+      "trafficDelay": 10
+    },
+    {
+      "from": "W_ALPHA",
+      "to": "M_ALPHA",
+      "distance": 22,
+      "capacity": 500,
+      "tollTax": 5,
+      "trafficDelay": 3
+    }
+  ],
+  "simulation": {
+    "failureNode": "UNKNOWN_NODE"
+  }
+}

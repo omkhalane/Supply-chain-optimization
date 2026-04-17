@@ -1,0 +1,48 @@
+{
+  "config": {
+    "petrolRate_INR": 94,
+    "truckMileage_kmpl": 5
+  },
+  "nodes": [
+    {
+      "id": "SUP_FSINK",
+      "type": "supplier",
+      "inventory": [{ "item": "Pack_A", "quantity": 1800, "unit": "units" }]
+    },
+    {
+      "id": "WH_FSINK",
+      "type": "warehouse",
+      "inventory": [
+        { "item": "Pack_A_Buffer", "quantity": 900, "unit": "units" }
+      ]
+    },
+    {
+      "id": "MKT_FAIL",
+      "type": "market",
+      "inventory": [
+        { "item": "Pack_A_Retail", "quantity": 500, "unit": "units" }
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "from": "SUP_FSINK",
+      "to": "WH_FSINK",
+      "distance": 50,
+      "capacity": 1000,
+      "tollTax": 18,
+      "trafficDelay": 10
+    },
+    {
+      "from": "WH_FSINK",
+      "to": "MKT_FAIL",
+      "distance": 30,
+      "capacity": 700,
+      "tollTax": 8,
+      "trafficDelay": 5
+    }
+  ],
+  "simulation": {
+    "failureNode": "MKT_FAIL"
+  }
+}

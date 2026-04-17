@@ -1,0 +1,27 @@
+{
+  "config": {
+    "petrolRate_INR": 100,
+    "truckMileage_kmpl": 5
+  },
+  "roads": [
+    {
+      "from": "A",
+      "to": "B",
+      "distance": 10,
+      "capacity": 100,
+      "tollTax": 0,
+      "trafficDelay": 0
+    },
+    {
+      "from": "B",
+      "to": "C",
+      "distance": 15,
+      "capacity": 90,
+      "tollTax": 0,
+      "trafficDelay": 0
+    }
+  ],
+  "simulation": {
+    "failureNode": "B"
+  }
+}
